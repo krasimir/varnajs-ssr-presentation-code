@@ -8,6 +8,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var app = (0, _express2.default)();
 
+app.use(_express2.default.static(__dirname + '/../../data'));
+app.use(_express2.default.static(__dirname + '/../'));
+
 app.get('*', function (req, res) {
   res.set('Content-type', 'text/html');
   res.send('<h1>Hello VarnaJS</h1>');
