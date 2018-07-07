@@ -7,8 +7,8 @@
     "type": "git"
   },
   "scripts": {
-    "build": "",
-    "watch": "",
+    "build": "browserify ./src/client/client.js -o ./build/bundle.js -t babelify && babel ./src --out-dir ./build",
+    "watch": "concurrently \"watchify ./src/client/client.js -o ./build/bundle.js -t babelify -v\" \"babel ./src --out-dir ./build --watch\"",
     "start": ""
   },
   "author": "Krasimir Tsonev <info@krasimirtsonev.com>",
