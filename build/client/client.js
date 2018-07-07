@@ -8,4 +8,20 @@ var _reactDom = require('react-dom');
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _App = require('./App');
+
+var _App2 = _interopRequireDefault(_App);
+
+var _store = require('./redux/store');
+
+var _store2 = _interopRequireDefault(_store);
+
+var _reactRedux = require('react-redux');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+_reactDom2.default.render(_react2.default.createElement(
+  _reactRedux.Provider,
+  { store: (0, _store2.default)() },
+  _react2.default.createElement(_App2.default, null)
+), document.querySelector('#container'));

@@ -7,7 +7,10 @@ app.use(express.static(__dirname + '/../'));
 
 app.get('*', function (req, res) {
   res.set('Content-type', 'text/html');
-  res.send('<h1>Hello VarnaJS</h1>');
+  res.send(`
+    <div id="container"></div>
+    <script src="bundle.js"></script>
+  `);
 });
 
 app.listen(9000, console.log('The server is running at port 9000'));

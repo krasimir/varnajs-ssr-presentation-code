@@ -13,7 +13,7 @@ app.use(_express2.default.static(__dirname + '/../'));
 
 app.get('*', function (req, res) {
   res.set('Content-type', 'text/html');
-  res.send('<h1>Hello VarnaJS</h1>');
+  res.send('\n    <div id="container"></div>\n    <script src="bundle.js"></script>\n  ');
 });
 
 app.listen(9000, console.log('The server is running at port 9000'));
