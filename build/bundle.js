@@ -23154,7 +23154,9 @@ var App = function (_React$Component) {
   _createClass(App, [{
     key: 'componentWillMount',
     value: async function componentWillMount() {
-      this.props.usersFetched((await fetchUsers()));
+      if (this.props.users === null) {
+        this.props.usersFetched((await fetchUsers()));
+      }
     }
   }, {
     key: 'render',

@@ -11,8 +11,11 @@ async function fetchUsers() {
 }
 
 class App extends React.Component {
+  
   async componentWillMount() {
-    this.props.usersFetched(await fetchUsers());
+    if (this.props.users === null) {
+      this.props.usersFetched(await fetchUsers());
+    }
   }
   render() {
     const { users } = this.props;
